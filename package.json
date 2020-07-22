@@ -1,0 +1,31 @@
+{
+  "name": "gui-erp-aero",
+  "version": "0.0.1",
+  "description": "Gui helper from ERP-AERO",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "https://github.com/medonomator/GUI-ERP-AERO",
+  "keywords": [
+    "Electron"
+  ],
+  "author": "Dmitry Zorin",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.1.1",
+    "electron-builder": "^22.7.0"
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    }
+  },
+  "dependencies": {
+    "electron-reload": "^1.5.0",
+    "jquery": "^3.5.1"
+  }
+}

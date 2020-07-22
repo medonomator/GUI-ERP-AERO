@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Helper for ERP-AERO</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="sandbox-1">
+      <strong>Sandbox 1</strong>
+      <br />
+      <input id="input-sandbox-1" type="text" placeholder="Ip address" />
+      <button type="button" class="button-sandbox-1 btn btn-primary btn-sm">
+        Connect
+      </button>
+      <button
+        type="button"
+        class="button-sandbox-1-close btn btn-danger btn-sm"
+      >
+        Close
+      </button>
+      <span>Assets</span>
+    </div>
+
+    <div class="sandbox-2">
+      <strong>Sandbox 2</strong>
+      <br />
+      <input id="input-sandbox-2" type="text" placeholder="Ip address" />
+      <button type="button" class="btn btn-primary btn-sm">Connect</button>
+      <button type="button" class="btn btn-danger btn-sm">Close</button>
+      <span>No Po</span>
+    </div>
+
+    <div class="create-migration">
+      <strong>Create Migration</strong>
+      <br />
+      <input type="text" placeholder="Migration name" />
+      <button type="button" class="btn btn-primary btn-sm">Create</button>
+      <button type="button" class="btn btn-success btn-sm">
+        Run Migrations
+      </button>
+      <button type="button" class="btn btn-warning btn-sm">
+        Run Migration POP
+      </button>
+    </div>
+
+    <div class="sync-table">
+      <strong>Sync Table</strong>
+      <br />
+      <input type="text" placeholder="Table name" />
+      <button type="button" class="btn btn-primary btn-sm">Sync</button>
+    </div>
+
+    <div class="create-module">
+      <strong>Create Module</strong>
+      <br />
+      <input type="text" placeholder="Enter module name" />
+      <button type="button" class="btn btn-primary btn-sm">Create</button>
+    </div>
+
+    <br />
+
+    <button type="button" class="btn btn-info btn-sm">
+      Add PM2 config API
+    </button>
+    <button type="button" class="btn btn-info btn-sm">
+      Add PM2 config API + SOCKET
+    </button>
+
+    <br />
+
+    <div class="form-group class stdout-textarea">
+      <strong>Stdout</strong>
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="hints">
+      <div>
+        Положите ключ <strong>stockholm.pem</strong> в папку
+        <strong>.ssh/</strong>
+      </div>
+      <div>
+        Для запуска тунеля потушите mysql командой
+        <strong>sudo service mysql stop</strong>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
