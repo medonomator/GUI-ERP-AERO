@@ -44,36 +44,59 @@
     <div class="create-migration">
       <strong>Create Migration</strong>
       <br />
-      <input type="text" placeholder="Migration name" />
-      <button type="button" class="btn btn-primary btn-sm">Create</button>
-      <button type="button" class="btn btn-success btn-sm">
+      <input
+        class="input-create-migration"
+        type="text"
+        placeholder="Migration name"
+      />
+      <button
+        type="button"
+        class="button-create-migration btn btn-primary btn-sm"
+      >
+        Create
+      </button>
+      <button type="button" class="button-run-migration btn btn-success btn-sm">
         Run Migrations
       </button>
-      <button type="button" class="btn btn-warning btn-sm">
+      <button
+        type="button"
+        class="button-create-migration-last-pop btn btn-warning btn-sm"
+      >
         Run Migration POP
       </button>
+      <input type="checkbox" checked />
+      <strong>Clear cache</strong>
     </div>
 
     <div class="sync-table">
       <strong>Sync Table</strong>
       <br />
-      <input type="text" placeholder="Table name" />
-      <button type="button" class="btn btn-primary btn-sm">Sync</button>
+      <input class="input-sync-table" type="text" placeholder="Table name" />
+      <button type="button" class="button-sync-table btn btn-primary btn-sm">Sync</button>
     </div>
 
     <div class="create-module">
-      <strong>Create Module</strong>
+      <strong>Create New Module</strong>
       <br />
-      <input type="text" placeholder="Enter module name" />
-      <button type="button" class="btn btn-primary btn-sm">Create</button>
+      <input class="input-create-module" type="text" placeholder="Enter module name" />
+      <button type="button" class="button-create-module btn btn-primary btn-sm">Create</button>
+    </div>
+    <div class="create-extenstion">
+      <strong>Create New Extenstion</strong>
+      <br />
+      <input class="input-extension-module" type="text" placeholder="Enter extension name" />
+      <button type="button" class="button-extension-module btn btn-primary btn-sm">Create</button>
     </div>
 
     <br />
 
-    <button type="button" class="btn btn-info btn-sm">
+    <button type="button" class="move-pm2-config-api btn btn-info btn-sm">
       Add PM2 config API
     </button>
-    <button type="button" class="btn btn-info btn-sm">
+    <button
+      type="button"
+      class="move-pm2-config-with-socket btn btn-info btn-sm"
+    >
       Add PM2 config API + SOCKET
     </button>
 
@@ -90,8 +113,24 @@
         <strong>.ssh/</strong>
       </div>
       <div>
-        Для запуска тунеля потушите mysql командой
-        <strong>sudo service mysql stop</strong>
+        Для запуска тунеля потушите mysql
+      </div>
+    </div>
+
+    <div class="mysql-demon">
+      <button type="button" class="create-sandbox btn btn-success btn-sm">
+        Create Sandbox
+      </button>
+      <button type="button" class="mysql-demon-stop btn btn-danger btn-sm">
+        Stop Mysql
+      </button>
+      <button type="button" class="mysql-demon-start btn btn-primary btn-sm">
+        Start Mysql
+      </button>
+
+      <div class="sync-files">
+        <strong>Sync files</strong>
+        <input type="checkbox" checked />
       </div>
     </div>
 

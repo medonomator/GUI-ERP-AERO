@@ -14,3 +14,15 @@ body {
   left: 10px;
   width: 400px;
 }
+
+.mysql-demon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.sync-files {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
