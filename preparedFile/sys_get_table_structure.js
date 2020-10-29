@@ -5,7 +5,7 @@ var async = require('async');
 var mysql = require('mysql');
 
 
-var connection = mysql.createConnection({ "host": "localhost", "user": "apps", "password": "Welcome2020!", "database": "baieu" });
+var connection = mysql.createConnection({ "host": "localhost", "user": "apps", "password": "1234", "database": "crmtst_baieu" });
 
 connection.connect(function (err) {
     if (err) {

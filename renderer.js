@@ -2,6 +2,7 @@ const { exec } = require("child_process");
 const $ = require("jquery");
 const { loadDataFromStorage } = require("./helpers");
 const { getBasePathProject } = require("./standartExec");
+const { createNewModule } = require("./standartExec/createNewModule");
 const { promisifyExec } = require("./helpers");
 
 loadDataFromStorage();
@@ -54,7 +55,10 @@ $(".button-run-migration").click(async () => {
 
 $(".button-create-migration").click(async () => {
   try {
+    const basePath = await getBasePathProject();
     const inputValMigration = $(".input-create-migration").val();
+    const pm2FilePath = `${process.cwd()}/preparedFile/knexfile.js`;
+    exec(`cp ${pm2FilePath} ${basePath}`);
 
     const data = await promisifyExec(`knex migrate:make ${inputValMigration}`);
 
@@ -83,8 +87,11 @@ $(".button-create-migration-last-pop").click(async () => {
 $(".button-sync-table").click(async () => {
   try {
     const basePath = await getBasePathProject();
-    const pm2FilePath = `${process.cwd()}/preparedFile/sys_tables_temp.js`;
+    const pm2FilePath = `${process.cwd()}/preparedFile/sys_get_table_structure.js`;
+    const inputSync = $('.input-sync-table').val();
     exec(`cp ${pm2FilePath} ${basePath}`);
+
+    await promisifyExec(`node sys_get_table_structure.js ${inputSync}`);
 
     alert("Complete");
   } catch (error) {
@@ -95,9 +102,10 @@ $(".button-sync-table").click(async () => {
 // Create module
 $(".button-create-module").click(async () => {
   try {
-    const basePath = await getBasePathProject();
+    const inputVal = $(".input-create-module").val();
+    await createNewModule(inputVal);
 
-    alert("In development");
+    // alert("Complete");
   } catch (error) {
     alert(error);
   }
@@ -106,8 +114,6 @@ $(".button-create-module").click(async () => {
 // Create extension
 $(".button-extension-module").click(async () => {
   try {
-    const basePath = await getBasePathProject();
-
     alert("In development");
   } catch (error) {
     alert(error);

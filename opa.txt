@@ -1,0 +1,25 @@
+const Module = require("libs/class/generator/module");
+const FieldEditClass = require("libs/class/fieldEdit");
+const helper = require("libs/helper");
+const libApi = require("libs/api");
+const moduleModel = require("models/module");
+const vtiger_part_transfer = require("tables/vtiger_part_transfer");
+
+class PartTransfer extends Module {
+    constructor(options = {}) {
+        helper.set(options, "name", moduleModel.CONST_MODULE_PART_TRANSFER);
+        helper.set(options, "table", vtiger_part_transfer.table);
+        helper.set(options, "tableIdColumn", libApi.getTableColumn(vtiger_part_transfer.columns.id));
+        super(options);
+    }
+
+    setFieldEditClass(req, crm_id, line_id, user_id, asyncObj) {
+        this._fieldEdit = new FieldEditClass(vtiger_part_transfer.table, vtiger_part_transfer.columns.id, crm_id, line_id, user_id);
+        this._fieldEdit.setRequest(req);
+        this._fieldEdit.setQBtable(vtiger_part_transfer.table, vtiger_part_transfer.columns.id);
+        this._fieldEdit.setActivitiesList(asyncObj.activitiesList);
+        this._fieldEdit.setDBConnection(asyncObj.connection);
+    }
+}
+
+module.exports = PartTransfer;
